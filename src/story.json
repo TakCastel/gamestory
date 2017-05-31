@@ -8,10 +8,10 @@
     "next": []
   },
   {
-    "text": "Bienvenue dans l'aventure. Vous êtes en ville.",
+    "text": "Bienvenue dans l'aventure. Vous êtes chez-vous et avez décidez de sortir par cette belle journée ensoleillée. Par où allez-vous commencer votre voyage ?",
     "next": [
       {"id": 3, "text": "Aller au port"},
-      {"id": 4, "text": "Rentrer chez vous"}
+      {"id": 7, "text": "Aller à la taverne"}
     ]
   },
   {
