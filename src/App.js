@@ -11,7 +11,7 @@ const Home = () => (
     <p className="gamestory-intro">
       Le site dont <strong>vous</strong> êtes le héros.
     </p>
-    <Link to="/character">Commencer l'aventure</Link>
+    <Link className="btn btn-primary" to="/character">Commencer l'aventure</Link>
   </div>
 )
 
@@ -29,9 +29,9 @@ class App extends Component {
 
   componentDidMount() {
     const name = localStorage.getItem("name")
-    const strenght = localStorage.getItem("strenght")
-    const health = localStorage.getItem("health")
-    const position = localStorage.getItem("position")
+    const strenght = parseInt(localStorage.getItem("strenght"), 10)
+    const health = parseInt(localStorage.getItem("health"), 10)
+    const position = parseInt(localStorage.getItem("position"), 10)
 
     if (name !== null) {
       this.setState({name})
@@ -67,30 +67,43 @@ class App extends Component {
     localStorage.removeItem("position")
   }
 
-  getPlayButton() {
-    if (this.state.strenght !== 0 && this.state.health !== 0) {
-      return (<Link role="button" to="/game">Jouer</Link>)
-    }
-    return null
-  }
-
   changePosition(id) {
     this.setState({position: id})
     localStorage.setItem("position", id)
   }
 
+  resetCharacter() {
+    this.setState({name: ''})
+    this.setState({strenght: 0})
+    this.setState({health: 0})
+    this.setState({position: 2})
+
+    localStorage.setItem("name", '')
+    localStorage.setItem("strenght", 0)
+    localStorage.setItem("health", 0)
+    localStorage.removeItem("position")
+
+  }
+
   render() {
+
+    console.log(this.state)
+
+    const characterCreated = this.state.strenght !== 0 && this.state.health !== 0 && this.state.name !== ''
 
     return (
       <Router>
         <div className="gamestory">
-          <Header/>
+          <Header
+            characterCreated={characterCreated}
+            resetCharacter={() => this.resetCharacter()}
+          />
           <Route exact path="/" component={Home}/>
           <Route path="/character" render={() => (
             <Character
+              characterCreated={characterCreated}
               handleChange={this.handleChange.bind(this)}
               createCharacter={this.createCharacter.bind(this)}
-              getPlayButton={this.getPlayButton.bind(this)}
               name={this.state.name}
               strenght={this.state.strenght}
               health={this.state.health}/>

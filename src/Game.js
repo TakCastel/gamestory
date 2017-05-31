@@ -14,9 +14,14 @@ class Game extends Component {
         <p>Santé : {this.props.health}</p>
 
         {text}
-        {next.map((step, i) => {
-          return (<button key={i} onClick={() => this.props.changePosition(step.id)}>{step.text}</button>)
-        })}
+        <div className="btn-group">
+          {next.map((step, i) => {
+            return (
+
+                <button className="btn btn-primary" key={i} onClick={() => this.props.changePosition(step.id)}>{step.text}</button>
+            )
+          })}
+        </div>
 
       </div>
     );

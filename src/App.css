@@ -8,10 +8,15 @@
 }
 
 .gamestory-header {
+  display:flex;
+  justify-content:space-between;
   background-color: #222;
-  height: 150px;
   padding: 20px;
   color: white;
+}
+
+.gamestory-brand {
+  display:flex;
 }
 
 .gamestory-intro {
@@ -21,4 +26,131 @@
 @keyframes Gamestory-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.btn-group {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+}
+
+.btn {
+	border: none;
+	cursor: pointer;
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	transition: all 0.3s;
+  transition:none;
+  color:#000;
+  text-decoration:none;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	transition: all 0.3s;
+}
+
+.btn-primary {
+	background: #f4bc42;
+	padding: 12px 24px;
+	margin: 24px 8px;
+  font-size:1em;
+  border-radius: 4px;
+  box-shadow: 0 6px #bc9132;
+}
+
+.btn-primary:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	transition: all 0.3s;
+}
+
+.btn-primary:hover {
+	box-shadow: 0 4px #bc9132;
+	top: 2px;
+}
+
+.btn-primary:active {
+	box-shadow: 0 0 #bc9132;
+	top: 6px;
+}
+
+.btn-secondary {
+  align-self: baseline;
+	background: #f46842;
+	padding: 12px;
+	margin: 12px 4px;
+  font-size:0.8em;
+  border-radius: 2px;
+  box-shadow: 0 3px #994129;
+}
+
+.btn-secondary:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+	box-shadow: 0 2px #994129;
+	top: 1px;
+}
+
+.btn-secondary:active {
+	box-shadow: 0 0 #994129;
+	top: 3px;
+}
+
+.btn-alert {
+  display:inline-block;
+  background: white;
+  padding: 12px;
+  margin: 12px 4px;
+  font-size:0.8em;
+  border-radius: 2px;
+  box-shadow: 0 3px #555;
+}
+
+.btn-alert:hover {
+	box-shadow: 0 2px #555;
+	top: 1px;
+}
+
+.btn-alert:active {
+	box-shadow: 0 0 #555;
+	top: 3px;
+}
+
+.btn-icon {
+  position:relative;
+  padding-left:40px;
+}
+
+.btn-icon img {
+  top: 8px;
+  left: 10px;
+  position: absolute;
+  height: 24px;
+}
+
+input {
+  border: 1px solid #999;
+  margin: 24px 8px;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.modal-alert {
+  padding:24px;
+  background:#f46842;
 }
