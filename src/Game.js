@@ -4,7 +4,9 @@ const Story = require('./story.json').story;
 
 class Game extends Component {
   render() {
-    console.log(this.props)
+    
+    console.log(Story)
+
     const { next, text } = Story[this.props.position];
 
     return (

@@ -52,8 +52,8 @@ class App extends Component {
   }
 
   createCharacter() {
-    const strenght = getRandomDice(7,12)
-    const health = getRandomDice(14,24)
+    const strenght = getRandomDice(6,12)
+    const health = getRandomDice(12,24)
 
     this.setState({strenght: strenght})
     localStorage.setItem("strenght", strenght)

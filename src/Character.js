@@ -20,7 +20,7 @@ class Character extends Component {
         <label htmlFor="name">Nom du personnage :</label>
         <input id="name" type="text" value={this.props.name} onChange={this.props.handleChange.bind(this)} placeholder="John Doe"/>
         <div className="btn-group">
-          <button className="btn btn-primary" onClick={this.props.createCharacter.bind(this)}>Créer votre personnage</button>
+          <button className="btn btn-primary" onClick={this.props.createCharacter.bind(this)}>Générer votre personnage</button>
         </div>
         <p>Force : {this.props.strenght}</p>
         <p>Santé : {this.props.health}</p>
