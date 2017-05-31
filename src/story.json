@@ -1,0 +1,29 @@
+{"story":[
+  {
+    "text": "Vous avez gagné !",
+    "next": []
+  },
+  {
+    "text": "Vous êtes MORT",
+    "next": []
+  },
+  {
+    "text": "Bienvenue dans l'aventure. Vous êtes en ville.",
+    "next": [
+      {"id": 3, "text": "Aller au bar"},
+      {"id": 4, "text": "Rentrer chez vous"}
+    ]
+  },
+  {
+    "text": "Vous êtes au bar.",
+    "next": [
+      {"id": 1, "text": "Vous battre"}
+    ]
+  },
+  {
+    "text": "Vous voilà chez vous.",
+    "next": [
+      {"id": 0, "text": "Dormir"}
+    ]
+  }
+]}
