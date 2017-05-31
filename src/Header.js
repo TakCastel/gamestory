@@ -30,7 +30,7 @@ class Header extends Component {
       return (
         <div className="modal-alert">
           <p>Êtes-vous sûr de vouloir recommencer ? Votre progression ne sera pas sauvegardée.</p>
-          <Link to="/character" className="btn btn-alert btn-icon" onClick={() => this.resetCharacter()}>
+          <Link to={process.env.PUBLIC_URL + '/character'} className="btn btn-alert btn-icon" onClick={() => this.resetCharacter()}>
             <img src={checkbox} alt=""/> Oui
           </Link>
           <button className="btn btn-alert btn-icon" onClick={() => this.toggleModal()}>

@@ -11,7 +11,7 @@ const Home = () => (
     <p className="gamestory-intro">
       Le site dont <strong>vous</strong> êtes le héros.
     </p>
-    <Link className="btn btn-primary" to="/character">Commencer l'aventure</Link>
+    <Link className="btn btn-primary" to={process.env.PUBLIC_URL + '/character'}>Commencer l'aventure</Link>
   </div>
 )
 
@@ -36,13 +36,13 @@ class App extends Component {
     if (name !== null) {
       this.setState({name})
     }
-    if (strenght !== null) {
+    if (!isNaN(strenght)) {
       this.setState({strenght})
     }
-    if (health !== null) {
+    if (!isNaN(health)) {
       this.setState({health})
     }
-    if (position !== null) {
+    if (!isNaN(position)) {
       this.setState({position})
     }
   }
@@ -98,8 +98,8 @@ class App extends Component {
             characterCreated={characterCreated}
             resetCharacter={() => this.resetCharacter()}
           />
-          <Route exact path="/" component={Home}/>
-          <Route path="/character" render={() => (
+          <Route exact path={process.env.PUBLIC_URL + '/'} component={Home}/>
+          <Route path={process.env.PUBLIC_URL + '/character'} render={() => (
             <Character
               characterCreated={characterCreated}
               handleChange={this.handleChange.bind(this)}
@@ -108,7 +108,7 @@ class App extends Component {
               strenght={this.state.strenght}
               health={this.state.health}/>
           )} />
-          <Route path="/game" render={() => (
+          <Route path={process.env.PUBLIC_URL + '/game'} render={() => (
             <Game
               changePosition={this.changePosition.bind(this)}
               name={this.state.name}

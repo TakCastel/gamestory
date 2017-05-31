@@ -5,7 +5,7 @@ class Character extends Component {
 
   getPlayButton() {
     if (this.props.characterCreated) {
-      return (<Link className="btn btn-primary" role="button" to="/game">Jouer</Link>)
+      return (<Link className="btn btn-primary" role="button" to={process.env.PUBLIC_URL + '/game'}>Jouer</Link>)
     }
     return null
   }
