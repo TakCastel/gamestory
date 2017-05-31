@@ -17,8 +17,7 @@ class Game extends Component {
         <div className="btn-group">
           {next.map((step, i) => {
             return (
-
-                <button className="btn btn-primary" key={i} onClick={() => this.props.changePosition(step.id)}>{step.text}</button>
+              <button className="btn btn-primary" key={i} onClick={() => this.props.changePosition(step.id)}>{step.text}</button>
             )
           })}
         </div>
