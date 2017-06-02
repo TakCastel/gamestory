@@ -121,6 +121,17 @@ h1 {
 	top: 3px;
 }
 
+.btn-disabled {
+  background: white;
+  color: #999;
+	padding: 12px 24px;
+	margin: 24px 8px;
+  font-size:0.9em;
+  border-radius: 4px;
+  box-shadow: 0 6px #999;
+  cursor: not-allowed;
+}
+
 .btn-alert {
   display:inline-block;
   background: white;

@@ -59,14 +59,13 @@ class App extends Component {
     const health = getRandomDice(12,24)
 
     this.setState({strenght: strenght})
-    localStorage.setItem("strenght", strenght)
-
     this.setState({health: health})
-    localStorage.setItem("health", health)
-
     this.setState({position: 2})
 
     localStorage.setItem("name", this.state.name)
+    localStorage.setItem("strenght", strenght)
+    localStorage.setItem("health", health)
+
     localStorage.removeItem("position")
     localStorage.removeItem("gold")
   }
@@ -74,6 +73,10 @@ class App extends Component {
   changePosition(id) {
     this.setState({position: id})
     localStorage.setItem("position", id)
+  }
+
+  getModifier() {
+    
   }
 
   resetCharacter() {
@@ -88,7 +91,6 @@ class App extends Component {
     localStorage.setItem("health", 0)
     localStorage.removeItem("position")
     localStorage.removeItem("gold")
-
   }
 
   render() {

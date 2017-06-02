@@ -8,17 +8,17 @@
     "next": []
   },
   {
-    "text": "Bienvenue dans l'aventure. Vous êtes chez-vous et avez décidez de sortir par cette belle journée ensoleillée. Par où allez-vous commencer votre voyage ?",
+    "text": "Bienvenue dans l'aventure. Vous êtes chez-vous et avez décidé de sortir par cette belle journée ensoleillée. Par où allez-vous commencer votre voyage ?",
     "next": [
       {"id": 3, "text": "Aller au port"},
       {"id": 7, "text": "Aller à la taverne"}
     ]
   },
   {
-    "text": "Vous êtes au port, un marin vous embrouille.",
+    "text": "Vous êtes au port, un marin vous embrouille. Vous pouvez lui filer un peu d'or pour qu'il vous laisse tranquille.",
     "next": [
       {"id": 6, "text": "Vous battre", "modifiers": [{ "type": "health", "value": -1 }]},
-      {"id": 9, "text": "Lui filer un peu d'or pour qu'il se casse", "modifiers": [{ "type": "gold", "value": -1 }]}
+      {"id": 9, "text": "Donner de l'or (1 PO)", "modifiers": [{ "type": "gold", "value": -1 }]}
     ]
   },
   {
