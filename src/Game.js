@@ -25,11 +25,11 @@ class Game extends Component {
     var isDisabled = this.isDisabled(step)
     if (!isDisabled) {
       this.props.changePosition(step.id)
+      this.props.getModification(step)
     }
   }
 
   render() {
-
     const { next, text } = Story[this.props.position];
 
     return (

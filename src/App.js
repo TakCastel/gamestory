@@ -21,7 +21,7 @@ class App extends Component {
       name: '',
       strenght: 0,
       health: 0,
-      gold: 5,
+      gold: 100,
       position: 2,
     };
   }
@@ -75,15 +75,47 @@ class App extends Component {
     localStorage.setItem("position", id)
   }
 
-  getModifier() {
-    
+  getModification(step) {
+
+    if (step.modifiers) {
+
+      var strenght = this.state.strenght
+      var health = this.state.health
+      var gold = this.state.gold
+
+      step.modifiers.map((modifier, i) => {
+        console.log(modifier)
+
+        switch (modifier.type) {
+          case "strenght":
+            strenght = modifier.value + this.state.strenght
+            break
+          case "health":
+            health = modifier.value + this.state.health
+            break
+          case "gold":
+            gold = modifier.value + this.state.gold
+            break
+          default:
+            break
+        }
+        return modifier
+      })
+
+      console.log(strenght, health, gold)
+      this.setState({strenght: strenght, health: health, gold: gold})
+
+      localStorage.setItem("strenght", strenght)
+      localStorage.setItem("health", health)
+      localStorage.setItem("gold", gold)
+    }
   }
 
   resetCharacter() {
     this.setState({name: ''})
     this.setState({strenght: 0})
     this.setState({health: 0})
-    this.setState({gold: 5})
+    this.setState({gold: 100})
     this.setState({position: 2})
 
     localStorage.setItem("name", '')
@@ -94,8 +126,6 @@ class App extends Component {
   }
 
   render() {
-
-    console.log(this.state)
 
     const characterCreated = this.state.strenght !== 0 && this.state.health !== 0 && this.state.name !== ''
 
@@ -118,7 +148,8 @@ class App extends Component {
           )} />
           <Route path={process.env.PUBLIC_URL + '/game'} render={() => (
             <Game
-              changePosition={this.changePosition.bind(this)}
+              changePosition={(id) => this.changePosition(id)}
+              getModification={(step) => this.getModification(step)}
               name={this.state.name}
               strenght={this.state.strenght}
               health={this.state.health}
