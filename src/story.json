@@ -17,14 +17,14 @@
   {
     "text": "Vous êtes au port, un marin vous embrouille.",
     "next": [
-      {"id": 6, "text": "Vous battre", "modifier": [{ "type": "health", "value": -1 }]},
-      {"id": 9, "text": "Lui filer un peu d'or pour qu'il se casse", "modifier": [{ "type": "gold", "value": -1 }]}
+      {"id": 6, "text": "Vous battre", "modifiers": [{ "type": "health", "value": -1 }]},
+      {"id": 9, "text": "Lui filer un peu d'or pour qu'il se casse", "modifiers": [{ "type": "gold", "value": -1 }]}
     ]
   },
   {
     "text": "Vous voilà chez vous.",
     "next": [
-      {"id": 5, "text": "Dormir", "modifier": [{ "type": "health", "value": 2 }]}
+      {"id": 5, "text": "Dormir", "modifiers": [{ "type": "health", "value": 2 }]}
     ]
   },
   {
@@ -44,18 +44,18 @@
     "text": "A la taverne, que voulez-vous faire ?",
     "next": [
       {"id": 8, "text": "Acheter du tabac (5 PO)",
-        "modifier": [
+        "modifiers": [
           {"type": "gold", "value": -5},
           {"type": "strenght", "value": -2}
         ]},
-      {"id": 10, "text": "Prendre une bière (10 PO)", "modifier": [{"type": "gold", "value": -10}]},
+      {"id": 10, "text": "Prendre une bière (10 PO)", "modifiers": [{"type": "gold", "value": -10}]},
       {"id": 4, "text": "Rentrer à la maison"}
     ]
   },
   {
     "text": "Vous avez fumé du tabac, vous perdez 2 points de Force. Vous êtes un peu fatigué.",
     "next": [
-      {"id": 10, "text": "Prendre une bière (10 PO)", "modifier": [{"type": "gold", "value": -10}]},
+      {"id": 10, "text": "Prendre une bière (10 PO)", "modifiers": [{"type": "gold", "value": -10}]},
       {"id": 4, "text": "Rentrer chez vous"}
     ]
   },
@@ -68,7 +68,7 @@
   {
     "text": "Vous avez bien bu ! En reprendrez-vous une deuxième ?",
     "next": [
-      {"id": 11, "text": "Oui (10 PO)", "modifier": [{"type": "gold", "value": -10}]},
+      {"id": 11, "text": "Oui (10 PO)", "modifiers": [{"type": "gold", "value": -10}]},
       {"id": 4, "text": "Non merci, rentrer"}
     ]
   },
@@ -82,7 +82,7 @@
   {
     "text": "Le cocher vous ramène chez-vous, il est temps de payer.",
     "next": [
-      {"id": 4, "text": "Voici, mon bon monsieur (10 PO)", "modifier": [{"type": "gold", "value": -10}]},
+      {"id": 4, "text": "Voici, mon bon monsieur (10 PO)", "modifiers": [{"type": "gold", "value": -10}]},
       {"id": 13, "text": "Désolé, je n'ai plus rien !"}
     ]
   },

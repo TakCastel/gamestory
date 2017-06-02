@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import logo from './logo.svg';
+import logo from './img/viking.svg';
 import restart from './img/restart.svg';
 import checkbox from './img/checkbox.svg';
 import remove from './img/remove.svg';
@@ -57,7 +57,7 @@ class Header extends Component {
         <div className="gamestory-header">
           <div className="gamestory-brand">
             <img src={logo} className="gamestory-logo" alt="logo" />
-            <h2>Le site dont vous êtes le héros</h2>
+            <h1>Gamestory</h1>
           </div>
           {this.getRestartButton()}
         </div>

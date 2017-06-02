@@ -14,9 +14,7 @@ class Character extends Component {
     console.log(this.props)
     return (
       <div>
-        <p className="gamestory-intro">
-          Feuille de personnage
-        </p>
+        <h2 className="title">Feuille de personnage</h2>
         <label htmlFor="name">Nom du personnage :</label>
         <input id="name" type="text" value={this.props.name} onChange={this.props.handleChange.bind(this)} placeholder="John Doe"/>
         <div className="btn-group">

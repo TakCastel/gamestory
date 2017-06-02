@@ -8,9 +8,7 @@ import './App.css'
 
 const Home = () => (
   <div>
-    <p className="gamestory-intro">
-      Le site dont <strong>vous</strong> êtes le héros.
-    </p>
+    <h2 className="title">Le site dont <strong>vous</strong> êtes le héros.</h2>
     <Link className="btn btn-primary" to={process.env.PUBLIC_URL + '/character'}>Commencer l'aventure</Link>
   </div>
 )
@@ -23,6 +21,7 @@ class App extends Component {
       name: '',
       strenght: 0,
       health: 0,
+      gold: 5,
       position: 2,
     };
   }
@@ -31,6 +30,7 @@ class App extends Component {
     const name = localStorage.getItem("name")
     const strenght = parseInt(localStorage.getItem("strenght"), 10)
     const health = parseInt(localStorage.getItem("health"), 10)
+    const gold = parseInt(localStorage.getItem("gold"), 10)
     const position = parseInt(localStorage.getItem("position"), 10)
 
     if (name !== null) {
@@ -41,6 +41,9 @@ class App extends Component {
     }
     if (!isNaN(health)) {
       this.setState({health})
+    }
+    if (!isNaN(gold)) {
+      this.setState({gold})
     }
     if (!isNaN(position)) {
       this.setState({position})
@@ -65,6 +68,7 @@ class App extends Component {
 
     localStorage.setItem("name", this.state.name)
     localStorage.removeItem("position")
+    localStorage.removeItem("gold")
   }
 
   changePosition(id) {
@@ -76,12 +80,14 @@ class App extends Component {
     this.setState({name: ''})
     this.setState({strenght: 0})
     this.setState({health: 0})
+    this.setState({gold: 5})
     this.setState({position: 2})
 
     localStorage.setItem("name", '')
     localStorage.setItem("strenght", 0)
     localStorage.setItem("health", 0)
     localStorage.removeItem("position")
+    localStorage.removeItem("gold")
 
   }
 
@@ -114,6 +120,7 @@ class App extends Component {
               name={this.state.name}
               strenght={this.state.strenght}
               health={this.state.health}
+              gold={this.state.gold}
               position={this.state.position}/>
           )} />
         </div>

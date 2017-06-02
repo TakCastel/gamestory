@@ -1,31 +1,44 @@
+body {
+  background:#edece8;
+  font-family: 'Roboto', sans-serif;
+}
+
 .gamestory {
   text-align: center;
 }
 
 .gamestory-logo {
-  animation: Gamestory-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 50px;
+  margin-right:24px
 }
 
 .gamestory-header {
   display:flex;
   justify-content:space-between;
-  background-color: #222;
-  padding: 20px;
+  align-items:center;
+  background-color: #262524;
+  padding: 10px 30px;
   color: white;
 }
 
 .gamestory-brand {
   display:flex;
+  align-items:center;
+  font-family: 'Londrina Solid', cursive;
+  font-weight: normal;
+  font-size: 1.2em;
+  letter-spacing: 3px;
+  text-transform:uppercase;
 }
 
-.gamestory-intro {
-  font-size: large;
+.title {
+  font-family: 'Londrina Solid', cursive;
+  font-weight: normal;
+  font-size: 2.3em;
 }
 
-@keyframes Gamestory-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+h1 {
+  margin:4px 0;
 }
 
 .btn-group {
@@ -40,7 +53,6 @@
 	cursor: pointer;
 	display: inline-block;
 	text-transform: uppercase;
-	letter-spacing: 1px;
 	font-weight: 700;
 	outline: none;
 	position: relative;
@@ -61,7 +73,7 @@
 	background: #f4bc42;
 	padding: 12px 24px;
 	margin: 24px 8px;
-  font-size:1em;
+  font-size:0.9em;
   border-radius: 4px;
   box-shadow: 0 6px #bc9132;
 }
@@ -84,10 +96,9 @@
 }
 
 .btn-secondary {
-  align-self: baseline;
 	background: #f46842;
 	padding: 12px;
-	margin: 12px 4px;
+	margin: 0 4px;
   font-size:0.8em;
   border-radius: 2px;
   box-shadow: 0 3px #994129;
