@@ -21,10 +21,18 @@ class App extends Component {
       name: '',
       strenght: 0,
       health: 0,
-      gold: 100,
+      gold: 10,
       position: 2,
+      potion: 0,
+      weapon: '',
+      items: ''
     };
   }
+
+  // chooseDifficulty() {
+  //   gold = difficulty.value + this.state.gold
+  //   localStorage.setItem("gold", this.state.gold)
+  // }
 
   componentDidMount() {
     const name = localStorage.getItem("name")
@@ -32,6 +40,9 @@ class App extends Component {
     const health = parseInt(localStorage.getItem("health"), 10)
     const gold = parseInt(localStorage.getItem("gold"), 10)
     const position = parseInt(localStorage.getItem("position"), 10)
+    const potion = parseInt(localStorage.getItem("potion"), 0)
+    const weapon = localStorage.getItem("weapon")
+    const items = localStorage.getItem("items")
 
     if (name !== null) {
       this.setState({name})
@@ -115,7 +126,7 @@ class App extends Component {
     this.setState({name: ''})
     this.setState({strenght: 0})
     this.setState({health: 0})
-    this.setState({gold: 100})
+    this.setState({gold: 10})
     this.setState({position: 2})
 
     localStorage.setItem("name", '')
@@ -125,9 +136,22 @@ class App extends Component {
     localStorage.removeItem("gold")
   }
 
+  // characterIsDead () {
+  //   if ("health" === 0) {
+  //     this.setState({"id": 1})
+  //
+  //     return (
+  //       <div>
+  //         <p>Votre niveau de Santé est arrivé à 0. Si vous n'avez pas de potion, votre aventure se termine ici. </p>
+  //         <button>Terminer l'aventure</button>
+  //       </div>
+  //     )
+  //   }
+  // }
+
   render() {
 
-    const characterCreated = this.state.strenght !== 0 && this.state.health !== 0 && this.state.name !== ''
+    const characterCreated = this.state.strenght !== 0 && this.state.health !== 0
 
     return (
       <Router>

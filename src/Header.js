@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import logo from './img/viking.svg';
-import restart from './img/restart.svg';
-import checkbox from './img/checkbox.svg';
-import remove from './img/remove.svg';
+import logo from './img/viking.svg'
+import restart from './img/restart.svg'
+import checkbox from './img/checkbox.svg'
+import remove from './img/remove.svg'
 
 class Header extends Component {
 
@@ -15,7 +15,7 @@ class Header extends Component {
   }
 
   getRestartButton() {
-    if (this.props.characterCreated) {
+    if (window.location.pathname === '/game' && this.props.characterCreated) {
       return (
         <button className="btn btn-secondary btn-icon" alt="logo-redo" onClick={() => this.toggleModal()}>
           <img src={restart} alt="" /> Recommencer

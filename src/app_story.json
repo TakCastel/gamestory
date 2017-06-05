@@ -17,24 +17,27 @@
   {
     "text": "Vous êtes au port, un marin vous embrouille. Vous pouvez lui filer un peu d'or pour qu'il vous laisse tranquille.",
     "next": [
-      {"id": 6, "text": "Vous battre", "modifiers": [{ "type": "health", "value": -1 }]},
+      {"id": 6, "text": "Vous battre", "modifiers": [{ "type": "health", "value": -20 }]},
       {"id": 9, "text": "Donner de l'or (1 PO)", "modifiers": [{ "type": "gold", "value": -1 }]}
     ]
   },
   {
     "text": "Vous voilà chez vous.",
     "next": [
-      {"id": 5, "text": "Dormir", "modifiers": [{ "type": "health", "value": 2 }]}
+      {"id": 5, "text": "Dormir", "modifiers": [
+        { "type": "health", "value": 2 },
+        { "type": "gold", "value": 100 }
+        ]}
     ]
   },
   {
-    "text": "Vous avez bien dormi ! Vous récupérez 2 point de Santé.",
+    "text": "Vous avez bien dormi ! Vous récupérez 2 point de Santé et percevez votre salaire de 100 pièces d'or !",
     "next": [
       {"id": 0, "text": "Attendre"}
     ]
   },
   {
-    "text": "Vous avez perdu la bagarre, vous perdez 1 point de Santé",
+    "text": "Vous avez perdu la bagarre, vous perdez 20 points de Santé",
     "next": [
       {"id": 4, "text": "Rentrer chez vous"},
       {"id": 7, "text": "Partir à la taverne"}

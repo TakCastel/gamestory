@@ -73,7 +73,7 @@ h1 {
 	background: #f4bc42;
 	padding: 12px 24px;
 	margin: 24px 8px;
-  font-size:0.9em;
+  font-size:1em;
   border-radius: 4px;
   box-shadow: 0 6px #bc9132;
 }
@@ -164,9 +164,9 @@ h1 {
   height: 24px;
 }
 
-input {
+.input-text {
   border: 1px solid #999;
-  margin: 24px 8px;
+  margin: 12px 8px 24px 8px;
   padding: 12px;
   border-radius: 4px;
   font-size: 1em;

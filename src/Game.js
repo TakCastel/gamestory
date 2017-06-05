@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import './Game.css'
 
-const Story = require('./story.json').story;
+const Story = require('./app_story.json').story;
 
 class Game extends Component {
 
@@ -11,7 +11,7 @@ class Game extends Component {
 
     if (step.modifiers) {
       step.modifiers.map((modifier, i) => {
-        if (this.props[modifier.type] + modifier.value < 0) {
+        if (this.props[modifier.type.strenght] + modifier.value < 0 && this.props[modifier.type.gold] + modifier.value < 0) {
           isDisabled = true
         }
         return isDisabled
