@@ -82,6 +82,7 @@ class App extends Component {
   }
 
   changePosition(id) {
+    console.log(id)
     this.setState({position: id})
     localStorage.setItem("position", id)
   }
@@ -113,7 +114,6 @@ class App extends Component {
         return modifier
       })
 
-      console.log(strenght, health, gold)
       this.setState({strenght: strenght, health: health, gold: gold})
 
       localStorage.setItem("strenght", strenght)
@@ -135,19 +135,6 @@ class App extends Component {
     localStorage.removeItem("position")
     localStorage.removeItem("gold")
   }
-
-  // characterIsDead () {
-  //   if ("health" === 0) {
-  //     this.setState({"id": 1})
-  //
-  //     return (
-  //       <div>
-  //         <p>Votre niveau de Santé est arrivé à 0. Si vous n'avez pas de potion, votre aventure se termine ici. </p>
-  //         <button>Terminer l'aventure</button>
-  //       </div>
-  //     )
-  //   }
-  // }
 
   render() {
 
@@ -174,6 +161,7 @@ class App extends Component {
             <Game
               changePosition={(id) => this.changePosition(id)}
               getModification={(step) => this.getModification(step)}
+              resetCharacter={() => this.resetCharacter()}
               name={this.state.name}
               strenght={this.state.strenght}
               health={this.state.health}

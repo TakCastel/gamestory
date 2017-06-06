@@ -57,7 +57,7 @@ class Character extends Component {
   }
 
   render() {
-    console.log(this.props)
+
     return (
       <div>
         <h2 className="title">Feuille de personnage</h2>
