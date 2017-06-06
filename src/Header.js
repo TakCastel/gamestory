@@ -15,7 +15,7 @@ class Header extends Component {
   }
 
   getRestartButton() {
-    if (window.location.pathname === '/game' && this.props.characterCreated) {
+    if ((window.location.pathname === '/gamestory/game' || window.location.pathname === '/game') && this.props.characterCreated) {
       return (
         <button className="btn btn-secondary btn-icon" alt="logo-redo" onClick={() => this.toggleModal()}>
           <img src={restart} alt="" /> Recommencer

@@ -23,9 +23,9 @@ class App extends Component {
       health: 0,
       gold: 10,
       position: 2,
-      potion: 0,
-      weapon: '',
-      items: ''
+      // potion: 0,
+      // weapon: '',
+      // items: ''
     };
   }
 
@@ -40,9 +40,9 @@ class App extends Component {
     const health = parseInt(localStorage.getItem("health"), 10)
     const gold = parseInt(localStorage.getItem("gold"), 10)
     const position = parseInt(localStorage.getItem("position"), 10)
-    const potion = parseInt(localStorage.getItem("potion"), 0)
-    const weapon = localStorage.getItem("weapon")
-    const items = localStorage.getItem("items")
+    // const potion = parseInt(localStorage.getItem("potion"), 0)
+    // const weapon = localStorage.getItem("weapon")
+    // const items = localStorage.getItem("items")
 
     if (name !== null) {
       this.setState({name})
