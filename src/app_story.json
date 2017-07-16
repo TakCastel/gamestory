@@ -26,14 +26,16 @@
     "next": [
       {"id": 5, "text": "Dormir", "modifiers": [
         { "type": "health", "value": 2 },
-        { "type": "gold", "value": 100 }
+        { "type": "gold", "value": 6 }
         ]}
     ]
   },
   {
-    "text": "Vous avez bien dormi ! Vous récupérez 2 point de Santé et percevez votre salaire de 100 pièces d'or !",
+    "text": "Vous avez bien dormi ! Vous récupérez 2 point de Santé et percevez votre salaire de 6 pièces d'or ! Qu'allez-vous faire à présent ?",
     "next": [
-      {"id": 0, "text": "Attendre"}
+      {"id": 3, "text": "Tenter le port"},
+      {"id": 7, "text": "Tenter la taverne"},
+      {"id": 0, "text": "Finir le jeu"}
     ]
   },
   {

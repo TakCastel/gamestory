@@ -62,10 +62,10 @@ class Character extends Component {
       <div>
         <h2 className="title">Feuille de personnage</h2>
         <label htmlFor="name">Nom du personnage :
-          <input className="input-text" id="name" type="text" value={this.props.name} onChange={(event) => this.props.handleChange(event)} placeholder="John Doe"/>
-          <button className="btn btn-primary btn-icon" onClick={() => this.showGenerator()}>
-            <img src={checkbox} alt=""/>Ok
-          </button>
+          <input className="input-group" id="name" type="text" value={this.props.name} onChange={(event) => this.props.handleChange(event)} placeholder="John Doe"/>
+            <button className="btn btn-input btn-icon" onClick={() => this.showGenerator()}>
+              <img src={checkbox} alt=""/>
+            </button>
         </label>
         {this.getStatsGenerator()}
         {this.getWarning()}

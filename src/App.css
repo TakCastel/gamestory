@@ -164,11 +164,30 @@ h1 {
   height: 24px;
 }
 
-.input-text {
+.btn-input {
+  border-radius: 0 4px 4px 0;
+  padding: 20px 22px;
+  left: -8px;
+  top: -10px;
+  background: #f4bc42;
+  box-shadow: 0 6px #bc9132;
+}
+
+.btn-input:hover {
+  box-shadow: 0 4px #bc9132;
+  top: -8px;
+}
+
+.btn-input:active {
+	box-shadow: 0 0 #994129;
+	top: -4px;
+}
+
+.input-group {
   border: 1px solid #999;
   margin: 12px 8px 24px 8px;
   padding: 12px;
-  border-radius: 4px;
+  border-radius: 4px 0 0 4px;
   font-size: 1em;
 }
 

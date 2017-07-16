@@ -20,7 +20,9 @@ class App extends Component {
     this.state = {
       name: '',
       strenght: 0,
+      maxstrenght: 0,
       health: 0,
+      maxhealth: 0,
       gold: 10,
       position: 2,
       // potion: 0,
@@ -71,11 +73,15 @@ class App extends Component {
 
     this.setState({strenght: strenght})
     this.setState({health: health})
+    this.setState({maxstrenght: strenght})
+    this.setState({maxhealth: health})
     this.setState({position: 2})
 
     localStorage.setItem("name", this.state.name)
     localStorage.setItem("strenght", strenght)
     localStorage.setItem("health", health)
+    localStorage.setItem("maxstrenght", strenght)
+    localStorage.setItem("maxhealth", health)
 
     localStorage.removeItem("position")
     localStorage.removeItem("gold")
@@ -104,6 +110,9 @@ class App extends Component {
             break
           case "health":
             health = modifier.value + this.state.health
+            if (health < 0) {
+              health = 0
+            }
             break
           case "gold":
             gold = modifier.value + this.state.gold
@@ -136,9 +145,15 @@ class App extends Component {
     localStorage.removeItem("gold")
   }
 
+  amountReached() {
+    if (this.state.maxhealth < this.state.health) {
+      this.setState('health': maxhealth)
+    }
+  }
+
   render() {
 
-    const characterCreated = this.state.strenght !== 0 && this.state.health !== 0
+    const characterCreated = this.state.strenght !== 0 && this.state.health >= 0
 
     return (
       <Router>
